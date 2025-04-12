@@ -103,7 +103,7 @@ def login_fun():
     #login login using mail and password
     return False
 
-def mentions():
+def get_mentions():
     driver = setup_driver()
     driver.get("https://x.com/home")
     contents = []
@@ -129,5 +129,5 @@ def mentions():
 
     return contents
 
-mentionsdata = mentions()
-print(mentionsdata)
+# mentionsdata = mentions()
+# print(mentionsdata)
