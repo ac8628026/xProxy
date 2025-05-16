@@ -19,6 +19,8 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 X_USERNAME = os.getenv("X_USERNAME")
 X_PASSWORD = os.getenv("X_PASSWORD")
 X_EMAIL = os.getenv("X_EMAIL")
+
+##for customize chrome profile
 # CHROME_PROFILE_PATH = r"C:\Users\Ashok choudhary\AppData\Local\Google\Chrome\User Data"
 # CHROME_PROFILE_NAME = "Profile 14"
 
