@@ -80,7 +80,7 @@ def extract_mention_data(driver, mention_ids):
     mention_data = []
     for mention_id in mention_ids:
         if check_reply(mention_id["id"]):
-            print(f"continue not need : {mention_id}")
+            #print(f"continue not need : {mention_id}")
             continue
         try:
             driver.get(f"{mention_id['href']}")
@@ -169,7 +169,7 @@ def login_fun(driver):
         elif page_type != "password":
             logging.error("Could not determine the post-username page type.")
             return False
-        #  Wait for password input appear
+        #  Waiting for password input appear
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "password")))
 
         # Enter password
@@ -196,19 +196,19 @@ def login_fun(driver):
 
 def get_mentions():
     driver = setup_driver()
-    print("driver setup successfully")
+    #print("driver setup successfully")
     driver.get("https://x.com/home")
-    print("home page loaded")
+    #print("home page loaded")
     contents = []
 
     try:
         if is_logged_in(driver):
             logging.info("Logged in and profile loaded.")
             mention_ids = scrape_mentions_ids(driver)
-            print(f"mention ids {mention_ids}")
+            # #print(f"mention ids {mention_ids}")
             if mention_ids:
                 contents = extract_mention_data(driver, mention_ids)
-                print(f"contents {contents}")
+                # #print(f"contents {contents}")
         else:
             logging.warning(" Not logged in. Attempting login fallback.")
             if login_fun(driver):
@@ -226,4 +226,4 @@ def get_mentions():
     return contents
 
 # mentionsdata = get_mentions()
-# print(mentionsdata)
+# #print(mentionsdata)

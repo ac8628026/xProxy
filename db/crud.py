@@ -15,10 +15,10 @@ def push_mentions(mention_id,parent_text, mention_text,timestamp ,mention_url,re
             replied_at = replied_at,
             reply = reply
         )
-        print(f"mentioning data : {new_mention}")
+        # print(f"mentioning data : {new_mention}")
         sessiondb.add(new_mention)
         sessiondb.commit()
-        print("Mention pushed")
+        # print("Mention pushed")
     except Exception as e:
         sessiondb.rollback()
         print(" Error during mention pushing",e)

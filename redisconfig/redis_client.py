@@ -1,5 +1,7 @@
 import redis
+import logging
 
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 def get_redis_client():
     try:
@@ -14,7 +16,7 @@ def get_redis_client():
             return redis_client
         
     except Exception as e:
-        print(f"Could not connect to Redis. Error: {e}")
+        logging.error("Could not connect to Redis. Error: {e}")
         return None
 
 
