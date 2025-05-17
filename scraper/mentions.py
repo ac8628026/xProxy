@@ -80,7 +80,7 @@ def extract_mention_data(driver, mention_ids):
     mention_data = []
     for mention_id in mention_ids:
         if check_reply(mention_id["id"]):
-            #print(f"continue not need : {mention_id}")
+            print(f"continue not need : {mention_id}")
             continue
         try:
             driver.get(f"{mention_id['href']}")
