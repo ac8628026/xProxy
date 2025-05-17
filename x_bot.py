@@ -34,7 +34,7 @@ def x_bot():
         result = reply_to_tweet(tweet_id=mention_id, reply_text=reply_text)
 
         if result:
-            # print(f"replied with :{mention_id}")
+            print(f"replied with :{mention_id}")
             update_mention_reply(mention_id,replied=True, replied_at=datetime.datetime.now(),reply=reply_text)
             mark_as_replyed(mention_id)
 
