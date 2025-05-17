@@ -4,7 +4,7 @@ def mark_as_replyed(mention_id):
     client = get_redis_client()
     if client:
         client.set(f"replied:{mention_id}", "1")
-        print(f"Added {mention_id} in Redis")
+        # print(f"Added {mention_id} in Redis")
 
 def check_reply(mention_id):
     client = get_redis_client()
